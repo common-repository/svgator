@@ -1,0 +1,449 @@
+#adminmenu .toplevel_page_svgator .wp-menu-image {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#adminmenu .toplevel_page_svgator .wp-menu-image img {
+    height: 20px;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 0;
+    vertical-align: middle;
+    width: 20px;
+}
+
+.svgator-wrap {
+    max-width: 1340px;
+}
+
+/**
+    Spinner for Ajax requests
+ */
+.svgator-loader {
+    background-color: rgba(0, 0, 0, .25);
+    background-image: url('../imgs/loader.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    left: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+/**
+    Header of projects
+ */
+#svgator-header {
+    align-items: center;
+    display: flex;
+    line-height: 36px;
+    padding: 0 8px;
+}
+
+#svgator-header > h1 {
+    margin-right: 20px;
+    padding: 0;
+}
+
+#svgator-header > form input {
+    background-image: url("../imgs/magnifier.svg");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    border-color: #d3d6d9;
+    border-radius: 4px;
+    height: 36px;
+    line-height: 36px;
+    padding-left: 37px;
+    width: 416px;
+}
+
+#svgator-header .logout {
+    background-color: #eee;
+    background-image: url("../imgs/logout.svg");
+    background-position: 15px center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    border: 1px solid #e1e3e4;
+    border-radius: 4px;
+    color: #454545;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 14px;
+    margin-left: auto;
+    padding: 10px 15px 10px 36px;
+}
+
+/**
+    List of projects
+ */
+#svgator-projects > ul {
+    cursor: default;
+    display: block;
+}
+
+#svgator-projects > ul > li {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .12);
+    border-radius: 4px;
+    display: none;
+    margin: 8px;
+    position: relative;
+    width: 250px;
+}
+
+#svgator-projects > ul > li.on-filter.on-page {
+    display: inline-block;
+}
+
+#svgator-projects .svgator-preview-container {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    height: 180px;
+    overflow: hidden;
+}
+
+#svgator-projects .svgator-title-container {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: .25px;
+    line-height: 32px;
+    margin-top: auto;
+    overflow-wrap: break-word;
+    padding: 16px;
+    text-align: center;
+    word-break: break-all;
+}
+
+#svgator-projects .svgator-commands-container {
+    color: #454545;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 28px;
+    padding: 9px;
+}
+
+#svgator-projects .svgator-commands-import {
+    border-radius: 4px;
+    display: inline-block;
+    padding: 9px;
+}
+
+#svgator-projects .svgator-commands-import:before {
+    background-image: url("../imgs/import.svg");
+    content: ' ';
+    display: inline-block;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: text-bottom;
+    width: 20px;
+}
+
+#svgator-projects .svgator-commands-import:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
+
+#svgator-projects .svgator-no-project {
+    color: #4c4c4c;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: normal;
+    text-align: center;
+    padding-top: 230px;
+}
+
+/**
+    Pagination
+ */
+#svgator-projects-pagination {
+    float: right;
+    max-width: 100%;
+}
+
+#svgator-projects-pagination ul {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+}
+
+#svgator-projects-pagination li {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2),
+    0 2px 2px 0 rgba(0, 0, 0, .14),
+    0 1px 5px 0 rgba(0, 0, 0, .12);
+    color: rgba(0, 0, 0, .87);
+    cursor: pointer;
+    font-size: 16px;
+    height: 34px;
+    line-height: 34px;
+    margin: 0 5px 5px;
+    min-width: 34px;
+    padding: 0 5px;
+    text-align: center;
+    transition: .3s cubic-bezier(0, 0, .2, 1);
+}
+
+#svgator-projects-pagination li.active {
+    background-color: #1976d2;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2),
+        0 4px 5px 0 rgba(0, 0, 0, .14),
+        0 1px 10px 0 rgba(0, 0, 0, .12);
+    color: #fff;
+}
+
+/**
+    Notifier
+ */
+#wp-svgator-notice {
+    background-color: #4caf50;
+    border: 0 none;
+    border-radius: 0 0 .5em .5em;
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, .15);
+    color: #fff;
+    left: 50%;
+    margin-left: -200px;
+    position: fixed;
+    padding-right: 1.5em;
+    text-align: center;
+    transition: top .5s linear 0s;
+    top: -100%;
+    width: 400px;
+    z-index: 999999;
+}
+
+#wp-svgator-notice[data-type="error"] {
+    background-color: #c00;
+    color: #fff;
+}
+
+#wp-svgator-notice.open {
+    top: 0;
+}
+
+#wp-svgator-notice .wp-svgator-notice-message {
+    padding: 1em .5em;
+}
+
+#wp-svgator-notice .wp-svgator-notice-close {
+    cursor: pointer;
+    display: block;
+    height: 1.5em;
+    margin-top: -.75em;
+    position: absolute;
+    top: 50%;
+    right: .5em;
+    width: 1.5em;
+}
+
+/**
+    Login container
+ */
+#login-container {
+    color: #20252b;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    padding-top: 200px;
+}
+
+#login-container p {
+    max-width: 400px;
+    margin: 0 auto 30px;
+}
+
+#login-container #login-to-svgator {
+    background-color: #007aff;
+    border: 0 none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 10px 56px;
+}
+
+.logged-in #login-container,
+.logged-out #svgator-filter,
+.logged-out .logout,
+.logged-out #svgator-projects {
+    display: none;
+}
+
+.media_svgator object{
+    width: 100%;
+}
+
+.svgator-widget-control .button-add-media {
+    display: none;
+}
+
+.svgator-widget-control.empty .button-add-media{
+    display: block;
+}
+
+.svgator-widget-control.empty .block-edit-media{
+    display: none;
+}
+
+.svgator-widget-control p.toggle-responsive {
+    text-align: left;
+    display: none;
+}
+
+.svgator-widget-control.has-dimension p.toggle-responsive {
+    display: block;
+}
+
+.svgator-widget-control.has-dimension p.no-dimension{
+    display: none;
+}
+
+
+.wp-svgator-container {
+    width: 100%;
+    height: 100%;
+}
+.wp-block .wp-svgator-image {
+    user-select: none;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.wp-block .wp-svgator-image.wp-svgator-placeholder {
+    background: #fff;
+    border: solid 1px #000;
+    box-sizing: border-box;
+    font-size: 13px;
+    padding: 24px;
+}
+
+.wp-block .wp-svgator-image .wp-svgator-placeholder-title {
+    font-weight: 600;
+}
+
+.wp-block .wp-svgator-image .wp-svgator-placeholder-description {
+    margin: 10px 0;
+}
+
+.wp-block .wp-svgator-image .wp-svgator-placeholder-button {
+    background-color: #007bb9;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    line-height: 24px;
+    padding: 6px 12px;
+}
+
+.wp-block .wp-svgator-image .wp-svgator-placeholder-button:hover {
+    background-color: #006ba1;
+}
+
+.editor-block-list-item-wp-svgator-insert-svg img {
+    background-color: rgb(23, 32, 50);
+    border-radius: 4px;
+}
+
+.svgator-popup-projects {
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.svgator-popup-inner, .svgator-popup-inner * {
+    box-sizing: border-box;
+}
+
+.svgator-popup-inner {
+    padding: 1%;
+}
+
+.svgator-popup-inner.svgator-loading {
+    background: url('../imgs/loader.svg') center center no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    min-width: 25%;
+    min-height: 25%;
+    max-width: 70%;
+    max-height: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.svgator-popup-inner.svgator-loading > *,
+.svgator-popup-inner.svgator-loading > #svgator-header {
+    display: none;
+}
+
+.svgator-popup-inner .svgator-no-project {
+    color: #4c4c4c;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: normal;
+    text-align: center;
+    padding-top: 230px;
+}
+
+#svgator-header {
+    line-height: 36px;
+    padding: 0 8px;
+}
+
+#svgator-header > form input {
+    background-image: url("../imgs/magnifier.svg");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    border-color: #d3d6d9;
+    border-radius: 4px;
+    height: 36px;
+    line-height: 36px;
+    padding-left: 37px;
+    min-width: 25%;
+}
+
+.svgator-limits {
+    margin: 0 8px;
+}
+
+.svgator-hidden {
+    display: none;
+}
+
+.svgator-project-list li {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: none;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.svgator-project-list li.svgator-on-page.svgator-on-filter {
+    display: inline-block;
+}
+
+.svgator-project-list li:hover {
+    cursor: pointer;
+    border-color: rgba(0, 0, 0, .12);
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .25) inset;
+}
+
+.svgator-project-list .filename {
+    max-height: 3.5em;
+    word-break: break-word;
+}
